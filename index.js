@@ -8,6 +8,8 @@ app.get('/', (req, res) => {
     res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 })
 
+app.get('/test', (req, res) => console.log("rota test"))
+
 app.listen(process.env.PORT || 3000);
 
 module.exports = app;
