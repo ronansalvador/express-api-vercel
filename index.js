@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/test', (req, res) => {
-  res.status(200).json('teste')
+  res.status(200).json({message: 'teste de retorno de API'})
 })
 
 app.listen(process.env.PORT || 3000);
