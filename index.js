@@ -1,14 +1,18 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const bodyParser = require('body-parser');
 
 app.use(express.static('public'))
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 })
 
-app.get('/test', (req, res) => console.log("rota test"))
+app.get('/test', (req, res) => {
+  res.status(200).json('teste')
+})
 
 app.listen(process.env.PORT || 3000);
 
