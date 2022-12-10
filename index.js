@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
-const fs = require('fs').promises;
 const PATH = './talker.json';
 
 app.use(express.static('public'))
@@ -13,8 +12,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/test', async (req, res) => {
-  const talkers = await fs.readFile(PATH, 'utf-8');
-  res.status(200).json(JSON.parse(talkers))
+  res.status(200).json(PATH)
 })
 
 app.listen(process.env.PORT || 3000);
