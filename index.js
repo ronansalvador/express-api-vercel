@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/test', async (req, res) => {
-  res.status(200).json(PATH)
+  res.status(200).json({message: 'teste de rota'})
 })
 
 app.listen(process.env.PORT || 3000);
